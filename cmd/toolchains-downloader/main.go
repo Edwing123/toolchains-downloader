@@ -154,7 +154,7 @@ func main() {
 	// Write to file.
 	_, err = tmpTarballFile.Write(tarball)
 	if err != nil {
-		fmt.Println("The following error ocurred writing to temporary file:", err)
+		fmt.Println("The following error ocurred while writing to temporary file:", err)
 		os.Exit(0)
 	}
 
@@ -169,7 +169,7 @@ func main() {
 
 	err = DecompressTarball(tmpTarballFileName, flags.Dir)
 	if err != nil {
-		fmt.Println("The following error ocurred decompressing file:", err)
+		fmt.Println("The following error ocurred while decompressing file:", err)
 		os.Exit(0)
 	}
 
