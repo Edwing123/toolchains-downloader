@@ -1,8 +1,15 @@
 # Program for downloading compiler toolchains
 
-This is a program for downloading compiler toolchains, for now, the only toolchains
-that can be downloaded with this program are:
+This is a program for downloading compiler toolchains.
 
-- The Go toolchain.
+## Supported toolchains
+
 - The Zig toolchain.
 
+## Supported platforms
+
+- Linux.
+
+## Required programs
+
+- tar.
