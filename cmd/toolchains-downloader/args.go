@@ -16,25 +16,23 @@ const (
 // Flags represent the flags passed
 // to the program.
 type Flags struct {
-	// ToolChainKind represents the kind
-	// of toolchain to download.
-	ToolChainKind ToolChainKind
+	// The kind of toolchain to download.
+	Kind ToolChainKind
 
-	// ToolChainsDir represents the directory
-	// where the toolchain will be stored.
-	ToolChainsDir string
+	// The directory where the toolchain will be stored.
+	Dir string
 }
 
 // Gets the provided flags.
 func GetFlags() Flags {
-	toolChainKind := flag.String(
-		"toolchain-kind",
+	kind := flag.String(
+		"kind",
 		"",
-		"The kind of toolchain to download: [zig, go]",
+		"The toolchain to download: [zig, go]",
 	)
 
-	toolChainsDir := flag.String(
-		"toolchains-dir",
+	dir := flag.String(
+		"dir",
 		"",
 		"the directory where the toolchain will be stored.",
 	)
@@ -42,16 +40,16 @@ func GetFlags() Flags {
 	flag.Parse()
 
 	// Validate provided values.
-	if *toolChainKind != "zig" && *toolChainKind != "go" {
+	if *kind != "zig" && *kind != "go" {
 		panic("Invalid value for flag toolchain-kind.")
 	}
 
-	if strings.TrimSpace(*toolChainsDir) == "" {
+	if strings.TrimSpace(*dir) == "" {
 		panic("Flag toolchains-dir is required.")
 	}
 
 	return Flags{
-		ToolChainKind: ToolChainKind(*toolChainKind),
-		ToolChainsDir: *toolChainsDir,
+		Kind: ToolChainKind(*kind),
+		Dir:  *dir,
 	}
 }
