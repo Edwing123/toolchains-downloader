@@ -41,11 +41,11 @@ func GetFlags() Flags {
 
 	// Validate provided values.
 	if *kind != "zig" && *kind != "go" {
-		panic("Invalid value for flag toolchain-kind.")
+		panic("Invalid value for flag kind.")
 	}
 
 	if strings.TrimSpace(*dir) == "" {
-		panic("Flag toolchains-dir is required.")
+		panic("Flag dir is required.")
 	}
 
 	return Flags{
