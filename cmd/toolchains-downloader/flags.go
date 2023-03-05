@@ -5,19 +5,11 @@ import (
 	"strings"
 )
 
-// Represents a kind of toolchain.
-type ToolChainKind string
-
-const (
-	ZigKind ToolChainKind = "zig"
-	GoKind  ToolChainKind = "go"
-)
-
 // Flags represent the flags passed
 // to the program.
 type Flags struct {
 	// The kind of toolchain to download.
-	Kind ToolChainKind
+	Kind string
 
 	// The directory where the toolchain will be stored.
 	Dir string
@@ -49,7 +41,7 @@ func GetFlags() Flags {
 	}
 
 	return Flags{
-		Kind: ToolChainKind(*kind),
+		Kind: *kind,
 		Dir:  *dir,
 	}
 }
