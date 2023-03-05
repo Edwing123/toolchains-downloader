@@ -6,9 +6,12 @@ import (
 	"git.edwing123.dev/toolchains-downloader/pkgs/platform"
 )
 
-const (
-	// URL of the JSON file with Zig releases information.
-	ZigReleasesURL string = "https://ziglang.org/download/index.json"
+var (
+	// Map with URLs containing releases information + download links.
+	ReleaseInfoURLs = map[string]string{
+		"zig": "https://ziglang.org/download/index.json",
+		"go":  "",
+	}
 )
 
 func main() {
