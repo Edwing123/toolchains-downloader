@@ -7,7 +7,8 @@ import (
 )
 
 const (
-	ZigReleasesJSONURL string = "https://ziglang.org/download/index.json"
+	// URL of the JSON file with Zig releases information.
+	ZigReleasesURL string = "https://ziglang.org/download/index.json"
 )
 
 func main() {
